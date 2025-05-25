@@ -1,36 +1,15 @@
 import random
-import time
-import os
-import sounddevice as sd
-from scipy.io.wavfile import write
+import os, time
 import whisper
 
-def countdown_timer(seconds, message):
-    for remaining in range(seconds, 0, -1):
-        mins, secs = divmod(remaining, 60)
-        timer_display = f"{message} {mins:02d}:{secs:02d}"
-        print(timer_display, end='\r')
-        time.sleep(1)
-    print(' ' * len(timer_display), end='\r')  # Clear timer line
+from utils import countdown_timer, record_audio, transcribe_audio
+
 
 def load_questions(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         return [line.strip() for line in f if line.strip()]
 
-def record_audio(filename, duration, fs=16000):
-    print(f"녹음 시작! ({duration}초)")
-    recording = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
-    countdown_timer(duration, "녹음 중:")
-    sd.wait()
-    write(filename, fs, recording)
-    print("녹음 종료. 파일 저장:", filename)
 
-def transcribe_audio(model, file_path, lang='en'):
-    try:
-        result = model.transcribe(file_path, language=lang)
-        return result['text']
-    except Exception as e:
-        return f"음성 인식 오류: {e}"
 
 def make_safe_filename(problem_count, question, attempt):
     # 문제 앞부분에서 특수문자 제거 및 길이 제한
