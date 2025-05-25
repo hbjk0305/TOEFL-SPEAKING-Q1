@@ -60,7 +60,7 @@ def main():
         while True:
             print(f"\n[문제 {problem_count}] (시도 {attempt})")
             print(question)
-            time.sleep(20)
+            time.sleep(15)
             print("\n15초 준비시간이 시작됩니다.")
             countdown_timer(15, "준비 중:")
 
