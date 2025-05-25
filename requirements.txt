@@ -1,2 +1,4 @@
 sounddevice
 scipy
+openai-whisper
+# brew install ffmpeg
