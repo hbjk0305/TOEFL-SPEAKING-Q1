@@ -11,7 +11,7 @@ q1-questions.txt is from [here](https://gist.github.com/mdibaiee/6a181163a06432f
 python indep.py
 ```
 
-For integrated questions
+## For integrated questions
 ```
 python integrated.py
 # 문제 번호 입력하면 준비시간과 녹음시간이 자동으로 설정된다.
@@ -24,4 +24,3 @@ python integrated.py
 
 ## TODO
 - [ ] GPT 첨삭 API 연결하기
-- [ ] 2, 3, 4번은 준비시간, 녹음, ASR 스크립트 기능이라도 구현
