@@ -2,6 +2,7 @@ q1-questions.txt is from [here](https://gist.github.com/mdibaiee/6a181163a06432f
 
 ## How to use
 ```
+conda install -c conda-forge ffmpeg # if ffmepg is not installed
 pip install -r requirements.txt
 # pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128    # for GPU
 python q1.py
